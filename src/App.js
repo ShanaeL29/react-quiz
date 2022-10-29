@@ -55,11 +55,20 @@ function App() {
     } else setShowScore(true);
   };
 
+  const handleReset = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="app">
       {showScore ? (
         <div className="score-section">
-          You scored {score} out of {questions.length}
+          <p>
+            You scored {score} out of {questions.length}
+          </p>
+          <button className="reset" onClick={handleReset}>
+            Reset Quiz
+          </button>
         </div>
       ) : (
         <>
